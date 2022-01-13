@@ -1,0 +1,16 @@
+.container {
+	display: flex;
+	justify-content: space-around;
+	a {
+		display: flex;
+		width: 120px;
+		height: 30px;
+		align-items: center;
+
+		img {
+			display: block;
+			margin-right: 8px;
+			height: 28px;
+		}
+	}
+}

@@ -12,10 +12,7 @@ img {
 		flex: 1;
 		
 		a {
-			background: rgb(73,73,73);
 			background: linear-gradient(180deg, var(--header-menu-color-up) 0%, var(--header-menu-color-down) 100%);
-			color: #fff;
-			text-decoration: none;
 			display: flex;
 			justify-content: center;
 			align-items: center;

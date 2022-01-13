@@ -19,9 +19,11 @@ export const PAGES: any[] = [
  * Componentes parciales
  */
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 export const COMPONENTS: any[] = [
-	HeaderComponent
+	HeaderComponent,
+	FooterComponent
 ];
 
 /**
