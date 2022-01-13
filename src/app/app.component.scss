@@ -1,0 +1,23 @@
+header {
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+main {
+	width: 100%;
+	background-color: var(--main-bg-color);
+	padding: 16px;
+	color: var(--main-color);
+}
+
+@media screen and (min-width: 900px) {
+	header {
+		width: 60%;
+		margin: 0 auto 8px;
+	}
+	
+	main {
+		width: 60%;
+		margin: 0 auto;
+	}
+}

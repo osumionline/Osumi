@@ -1,0 +1,29 @@
+img {
+	width: 100%;
+}
+
+.menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	
+	li {
+		flex: 1;
+		
+		a {
+			background: rgb(73,73,73);
+			background: linear-gradient(180deg, var(--header-menu-color-up) 0%, var(--header-menu-color-down) 100%);
+			color: #fff;
+			text-decoration: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 32px;
+			
+			&:hover {
+				background: linear-gradient(0deg, var(--header-menu-color-up) 0%, var(--header-menu-color-down) 100%);
+			}
+		}
+	}
+}

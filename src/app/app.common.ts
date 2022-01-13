@@ -18,7 +18,11 @@ export const PAGES: any[] = [
 /**
  * Componentes parciales
  */
-export const COMPONENTS: any[] = [];
+import { HeaderComponent } from './components/header/header.component';
+
+export const COMPONENTS: any[] = [
+	HeaderComponent
+];
 
 /**
  * Pipes
