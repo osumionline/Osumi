@@ -1,0 +1,31 @@
+/**
+ * Páginas
+ */
+import { HomeComponent } from './pages/home/home.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { ProjectDetailComponent } from './pages/project-detail/project-detail.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { PortfolioDetailComponent } from './pages/portfolio-detail/portfolio-detail.component';
+
+export const PAGES: any[] = [
+	HomeComponent,
+	ProjectsComponent,
+	ProjectDetailComponent,
+	PortfolioComponent,
+	PortfolioDetailComponent
+];
+
+/**
+ * Componentes parciales
+ */
+export const COMPONENTS: any[] = [];
+
+/**
+ * Pipes
+ */
+export const PIPES: any[] = [];
+
+/**
+ * Servicios
+ */
+export const SERVICES: any[] = [];

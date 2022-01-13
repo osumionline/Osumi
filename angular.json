@@ -70,6 +70,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+		  "options": {
+            "browserTarget": "Osumi:build",
+            "port": 5200
+          },
           "configurations": {
             "production": {
               "browserTarget": "Osumi:build:production"
