@@ -37,7 +37,6 @@ export class ProjectDetailComponent implements OnInit {
 			}
 			else {
 				this.selectedProject = new Project().fromInterface(this.projects[ind]);
-				console.log(this.selectedProject.numPhotos);
 			}
 		});
 	}

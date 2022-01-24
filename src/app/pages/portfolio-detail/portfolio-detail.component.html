@@ -1,1 +1,16 @@
-<p>portfolio-detail works!</p>
+<div class="project" *ngIf="selectedProject.id !== ''">
+	<div class="photos">
+		<img *ngFor="let p of selectedProject.numPhotos"
+			 [src]="'/assets/portfolio/' + selectedProject.id + '/' + selectedProject.id + '_' + p + '.webp'"
+			 [alt]="selectedProject.title"
+			 [ngClass]="{'left': (selectedPhoto > p), 'center': (selectedPhoto === p), 'right': (selectedPhoto < p)}">
+		<div class="controls">
+			<button type="button" (click)="previousPhoto()">&lt;</button>
+			<button type="button" (click)="nextPhoto()">&gt;</button>
+		</div>
+	</div>
+	<div class="info">
+		<h1>{{selectedProject.title}}</h1>
+		<main [innerHTML]="selectedProject.description"></main>
+	</div>
+</div>
