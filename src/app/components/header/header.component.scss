@@ -7,18 +7,20 @@ img {
 	margin: 0;
 	padding: 0;
 	display: flex;
-	
+
 	li {
 		flex: 1;
-		
+
 		a {
 			background: linear-gradient(180deg, var(--header-menu-color-up) 0%, var(--header-menu-color-down) 100%);
+			color: #ccc;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			height: 32px;
-			
+
 			&:hover {
+				color: #fff;
 				background: linear-gradient(0deg, var(--header-menu-color-up) 0%, var(--header-menu-color-down) 100%);
 			}
 		}

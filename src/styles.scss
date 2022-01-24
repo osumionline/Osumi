@@ -1,13 +1,14 @@
 :root {
 	--body-bg-color: #fff;
-	--a-color: #ccc;
-	--a-hover-color: #888;
+	--a-color: #888;
+	--a-hover-color: #000;
 	--a-hover-bg-color: #eee;
 	--header-menu-color-up: #494949;
 	--header-menu-color-down: #404040;
-	--main-bg-color: #eee;
+	--main-bg-color: #fff;
 	--main-color: #000;
 	--main-border-color: #171717;
+	--main-shadow: rgba(0,0,0,0.2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +22,7 @@
 		--main-bg-color: #333;
 		--main-color: #ddd;
 		--main-border-color: #171717;
+		--main-shadow: rgba(0,0,0,0.8);
 	}
 }
 
@@ -44,7 +46,7 @@ a {
 	color: var(--a-color);
 	text-decoration: none;
 	font-weight: bold;
-	
+
 	&:hover {
 		color: var(--a-hover-color);
 	}
