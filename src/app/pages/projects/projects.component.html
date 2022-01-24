@@ -1,18 +1,10 @@
 <h1>Proyectos</h1>
 <p>Estos son los proyectos propios que hemos realizado en Osumi.</p>
 
-<a routerLink="/project/ofw" class="project">
-	<img src="/assets/projects/ofw/ofw_1.webp" alt="Osumi Framework">
+<a *ngFor="let p of projects" [routerLink]="['/project', p.id]" class="project">
+	<img [src]="'/assets/projects/' + p.id + '/' + p.id + '_1.webp'" [alt]="p.title">
 	<div class="content">
-		<h2>Osumi Framework</h2>
-		<p>Framework para desarrollo de aplicaciones PHP.</p>
-	</div>
-</a>
-
-<a routerLink="/project/escaparatv" class="project">
-	<img src="/assets/projects/escaparatv/escaparatv_1.webp" alt="EscaparaTV">
-	<div class="content">
-		<h2>EscaparaTV</h2>
-		<p>Sistema de gestión de contenido publicitario.</p>
+		<h2>{{p.title}}</h2>
+		<p>{{p.short}}</p>
 	</div>
 </a>

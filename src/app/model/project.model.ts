@@ -4,6 +4,7 @@ export class Project {
 	constructor(
 		public id: string = '',
 		public title:  string = '',
+		public short: string = '',
 		public description: string = '',
 		public photos: number = 0
 	) {}
@@ -15,6 +16,7 @@ export class Project {
 	fromInterface(p: ProjectInfoInterface): Project {
 		this.id = p.id;
 		this.title = p.title;
+		this.short = p.short;
 		this.description = p.description;
 		this.photos = p.photos;
 

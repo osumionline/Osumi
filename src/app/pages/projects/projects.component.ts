@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectInfoInterface } from 'src/app/interfaces/interfaces';
+import { PROJECTS } from 'src/app/projects';
 
 @Component({
 	selector: 'app-projects',
@@ -6,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+	projects: ProjectInfoInterface[] = [];
+
 	constructor() {}
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.projects = PROJECTS;
+	}
 }
