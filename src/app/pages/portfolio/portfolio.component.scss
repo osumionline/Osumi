@@ -1,0 +1,30 @@
+.portfolio {
+	clear: both;
+    background-color: var(--body-bg-color);
+    display: flex;
+    padding: 8px;
+    margin-bottom: 16px;
+
+	img {
+		width: 150px;
+		display: block;
+		margin-right: 16px;
+	}
+
+	.content {
+		flex: 1;
+
+		h2 {
+			margin-top: 0;
+			border-bottom: 1px solid #ccc;
+		}
+
+		p {
+			font-weight: 400;
+		}
+	}
+	
+	&:hover {
+		background-color: #504f4f;
+	}
+}
