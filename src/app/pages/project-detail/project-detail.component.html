@@ -3,7 +3,8 @@
 		<img *ngFor="let p of selectedProject.numPhotos"
 			 [src]="'/assets/projects/' + selectedProject.id + '/' + selectedProject.id + '_' + p + '.webp'"
 			 [alt]="selectedProject.title"
-			 [ngClass]="{'left': (selectedPhoto > p), 'center': (selectedPhoto === p), 'right': (selectedPhoto < p)}">
+			 [ngClass]="{'left': (selectedPhoto > p), 'center': (selectedPhoto === p), 'right': (selectedPhoto < p)}"
+			 (click)="showPhoto()">
 		<div class="controls">
 			<button type="button" (click)="previousPhoto()">&lt;</button>
 			<button type="button" (click)="nextPhoto()">&gt;</button>
@@ -13,4 +14,8 @@
 		<h1>{{selectedProject.title}}</h1>
 		<main [innerHTML]="selectedProject.description"></main>
 	</div>
+</div>
+
+<div *ngIf="openPhoto" class="photo-detail">
+	<img [src]="'/assets/projects/' + selectedProject.id + '/' + selectedProject.id + '_' + selectedPhoto + '.webp'" (click)="showPhoto()">
 </div>

@@ -12,6 +12,7 @@
 			position: absolute;
 			width: 100%;
 			transition: all .4s;
+			cursor: pointer;
 
 			&.left {
 				left: -100%;
@@ -66,12 +67,35 @@
 	}
 }
 
+.photo-detail {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		width: 90%;
+		cursor: pointer;
+	}
+}
+
 @media screen and (min-width: 900px) {
 	.project {
 		flex-direction: row;
 
 		.photos {
 			width: 300px;
+		}
+	}
+
+	.photo-detail {
+		img {
+			width: 50%;
 		}
 	}
 }

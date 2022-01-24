@@ -11,6 +11,7 @@ import { PORTFOLIO }  from 'src/app/projects';
 export class PortfolioDetailComponent implements OnInit {
 	selectedProject: Project = new Project();
 	selectedPhoto: number = 1;
+	openPhoto: boolean = false;
 
 	constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -39,5 +40,9 @@ export class PortfolioDetailComponent implements OnInit {
 			return;
 		}
 		this.selectedPhoto++;
+	}
+
+	showPhoto(): void {
+		this.openPhoto = !this.openPhoto;
 	}
 }
