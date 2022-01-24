@@ -13,7 +13,7 @@ export class ProjectDetailComponent implements OnInit {
 		{
 			id: 'ofw',
 			title: 'Osumi Framework',
-			description: 'asd',
+			description: '<p>Osumi Framework es un pequeño framework orientado al modelo MVC (Modelo, Vista, Controlador) para la creación de aplicaciones web, tanto pequeñas como grandes.</p><p>La documentación del framework, con casos de uso y ejemplos, se encuentra en <a href="https://framework.osumi.es" target="_blank">Osumi Framework Docs</a>.</p><p>El repositorio con todo el código está disponible en <a href="https://github.com/igorosabel/Osumi-Framework" target="_blank">Github</a> bajo licencia MIT.</p>',
 			photos: 5
 		},
 		{
@@ -24,6 +24,7 @@ export class ProjectDetailComponent implements OnInit {
 		}
 	];
 	selectedProject: Project = new Project();
+	selectedPhoto: number = 1;
 
 	constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -39,5 +40,19 @@ export class ProjectDetailComponent implements OnInit {
 				console.log(this.selectedProject.numPhotos);
 			}
 		});
+	}
+
+	previousPhoto(): void {
+		if (this.selectedPhoto === 1) {
+			return;
+		}
+		this.selectedPhoto--;
+	}
+
+	nextPhoto(): void {
+		if (this.selectedPhoto === this.selectedProject.photos) {
+			return;
+		}
+		this.selectedPhoto++;
 	}
 }

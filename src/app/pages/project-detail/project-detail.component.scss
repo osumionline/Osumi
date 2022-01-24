@@ -4,9 +4,49 @@
 
 	.photos {
 		padding: 16px;
+		overflow: hidden;
+		height: 220px;
+		position: relative;
 
 		img {
+			position: absolute;
 			width: 100%;
+			transition: all .4s;
+
+			&.left {
+				left: -100%;
+			}
+
+			&.center {
+				left: 0;
+			}
+
+			&.right {
+				left: 100%;
+			}
+		}
+
+		.controls {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			justify-content: space-around;
+			width: 100%;
+
+			button {
+				border: 0;
+				background: transparent;
+				color: var(--a-color);
+				font-size: 2em;
+				cursor: pointer;
+				border-radius: 6px;
+
+				&:hover {
+					background-color: var(--a-hover-bg-color);
+					color: var(--a-hover-color);
+				}
+			}
 		}
 	}
 

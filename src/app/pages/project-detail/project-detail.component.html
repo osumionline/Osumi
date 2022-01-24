@@ -1,6 +1,13 @@
 <div class="project" *ngIf="selectedProject.id !== ''">
 	<div class="photos">
-		<img [src]="'/assets/projects/' + selectedProject.id + '/' + selectedProject.id + '_1.webp'" [alt]="selectedProject.title">
+		<img *ngFor="let p of selectedProject.numPhotos"
+			 [src]="'/assets/projects/' + selectedProject.id + '/' + selectedProject.id + '_' + p + '.webp'"
+			 [alt]="selectedProject.title"
+			 [ngClass]="{'left': (selectedPhoto > p), 'center': (selectedPhoto === p), 'right': (selectedPhoto < p)}">
+		<div class="controls">
+			<button type="button" (click)="previousPhoto()">&lt;</button>
+			<button type="button" (click)="nextPhoto()">&gt;</button>
+		</div>
 	</div>
 	<div class="info">
 		<h1>{{selectedProject.title}}</h1>
