@@ -1,6 +1,6 @@
 :root {
-	--body-bg-color: #fff;
-	--a-color: #888;
+	--body-bg-color: #fafafa;
+	--a-color: #555;
 	--a-hover-color: #000;
 	--a-hover-bg-color: #eee;
 	--header-menu-color-up: #494949;
@@ -9,6 +9,8 @@
 	--main-color: #000;
 	--main-border-color: #171717;
 	--main-shadow: rgba(0,0,0,0.2);
+	--project-hover-color: #eee;
+	--project-color: #000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,6 +25,8 @@
 		--main-color: #ddd;
 		--main-border-color: #171717;
 		--main-shadow: rgba(0,0,0,0.8);
+		--project-hover-color: #504f4f;
+		--project-color: #fff;
 	}
 }
 
