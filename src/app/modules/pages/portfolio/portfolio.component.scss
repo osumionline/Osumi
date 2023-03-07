@@ -1,9 +1,9 @@
 .portfolio {
 	clear: both;
-    background-color: var(--body-bg-color);
-    display: flex;
-    padding: 8px;
-    margin-bottom: 16px;
+	background-color: var(--body-bg-color);
+	display: flex;
+	padding: 8px;
+	margin-bottom: 16px;
 	color: var(--project-color);
 
 	img {
@@ -24,7 +24,7 @@
 			font-weight: 400;
 		}
 	}
-	
+
 	&:hover {
 		background-color: var(--project-hover-color);
 	}
