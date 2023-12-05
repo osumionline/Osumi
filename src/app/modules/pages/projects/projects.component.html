@@ -1,8 +1,8 @@
 <h1>Proyectos</h1>
 <p>Estos son los proyectos propios que hemos realizado en Osumi.</p>
 
-<a *ngFor="let p of projects"
-   [routerLink]="['/project', p.id]"
+@for (p of projects; track p.id) {
+<a [routerLink]="['/project', p.id]"
    class="project">
 	<img [src]="'/assets/projects/' + p.id + '/' + p.id + '_1.webp'"
 		 [alt]="p.title">
@@ -11,3 +11,4 @@
 		<p>{{p.short}}</p>
 	</div>
 </a>
+}

@@ -1,5 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ProjectInfoInterface } from 'src/app/interfaces/interfaces';
 import { PROJECTS } from 'src/app/projects';
@@ -9,12 +8,8 @@ import { PROJECTS } from 'src/app/projects';
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
 })
-export default class ProjectsComponent implements OnInit {
-  projects: ProjectInfoInterface[] = [];
-
-  ngOnInit(): void {
-    this.projects = PROJECTS;
-  }
+export default class ProjectsComponent {
+  projects: ProjectInfoInterface[] = PROJECTS;
 }
