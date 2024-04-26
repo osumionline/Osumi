@@ -1,10 +1,10 @@
-@if (selectedProject.id !== '') {
+@if (selectedProject().id !== '') {
 <div class="project">
 	<div class="photos">
-		@for (p of selectedProject.numPhotos; track p) {
-		<img [src]="'/assets/portfolio/' + selectedProject.id + '/' + selectedProject.id + '_' + p + '.webp'"
-			 [alt]="selectedProject.title"
-			 [ngClass]="{'left': (selectedPhoto > p), 'center': (selectedPhoto === p), 'right': (selectedPhoto < p)}"
+		@for (p of selectedProject().numPhotos; track p) {
+		<img [src]="'/assets/portfolio/' + selectedProject().id + '/' + selectedProject().id + '_' + p + '.webp'"
+			 [alt]="selectedProject().title"
+			 [ngClass]="{'left': (selectedPhoto() > p), 'center': (selectedPhoto() === p), 'right': (selectedPhoto() < p)}"
 			 (click)="showPhoto()">
 		}
 		<div class="controls">
@@ -15,16 +15,16 @@
 		</div>
 	</div>
 	<div class="info">
-		<h1>{{selectedProject.title}}</h1>
-		<main [innerHTML]="selectedProject.description"></main>
+		<h1>{{selectedProject().title}}</h1>
+		<main [innerHTML]="selectedProject().description"></main>
 	</div>
 </div>
 }
 
-@if (openPhoto) {
+@if (openPhoto()) {
 <div class="photo-detail">
-	<img [src]="'/assets/portfolio/' + selectedProject.id + '/' + selectedProject.id + '_' + selectedPhoto + '.webp'"
+	<img [src]="'/assets/portfolio/' + selectedProject().id + '/' + selectedProject().id + '_' + selectedPhoto() + '.webp'"
 		 (click)="showPhoto()"
-		 [alt]="selectedProject.title">
+		 [alt]="selectedProject().title">
 </div>
 }

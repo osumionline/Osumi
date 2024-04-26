@@ -1,6 +1,6 @@
-import { ProjectInfoInterface } from 'src/app/interfaces/interfaces';
+import { ProjectInfoInterface } from '@interfaces/interfaces';
 
-export class Project {
+export default class Project {
   constructor(
     public id: string = '',
     public title: string = '',

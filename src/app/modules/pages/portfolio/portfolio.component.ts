@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { ProjectInfoInterface } from 'src/app/interfaces/interfaces';
-import { PORTFOLIO } from 'src/app/projects';
+import { RouterLink } from '@angular/router';
+import { PORTFOLIO } from '@app/projects';
+import { ProjectInfoInterface } from '@interfaces/interfaces';
 
 @Component({
   standalone: true,
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
-  imports: [RouterModule],
+  imports: [RouterLink],
 })
 export default class PortfolioComponent {
   portfolio: ProjectInfoInterface[] = PORTFOLIO;

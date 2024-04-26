@@ -4,9 +4,10 @@ import {
   InMemoryScrollingOptions,
   provideRouter,
   withInMemoryScrolling,
+  withViewTransitions,
 } from '@angular/router';
 
-import { routes } from 'src/app/app.routes';
+import { routes } from '@app/app.routes';
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'top',
@@ -16,5 +17,7 @@ const inMemoryScrollingFeature: InMemoryScrollingFeature =
   withInMemoryScrolling(scrollConfig);
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes, inMemoryScrollingFeature)],
+  providers: [
+    provideRouter(routes, inMemoryScrollingFeature, withViewTransitions()),
+  ],
 };

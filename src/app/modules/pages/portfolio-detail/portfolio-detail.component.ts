@@ -1,8 +1,14 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { NgClass } from '@angular/common';
+import {
+  Component,
+  OnInit,
+  WritableSignal,
+  inject,
+  signal,
+} from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { ProjectInfoInterface } from 'src/app/interfaces/interfaces';
-import { Project } from 'src/app/model/project.model';
+import { ProjectInfoInterface } from '@interfaces/interfaces';
+import Project from '@model/project.model';
 import { PORTFOLIO } from 'src/app/projects';
 
 @Component({
@@ -10,44 +16,49 @@ import { PORTFOLIO } from 'src/app/projects';
   selector: 'app-portfolio-detail',
   templateUrl: './portfolio-detail.component.html',
   styleUrls: ['./portfolio-detail.component.scss'],
-  imports: [CommonModule],
+  imports: [NgClass],
 })
 export default class PortfolioDetailComponent implements OnInit {
-  selectedProject: Project = new Project();
-  selectedPhoto: number = 1;
-  openPhoto: boolean = false;
+  private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+  private router: Router = inject(Router);
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+  selectedProject: WritableSignal<Project> = signal<Project>(new Project());
+  selectedPhoto: WritableSignal<number> = signal<number>(1);
+  openPhoto: WritableSignal<boolean> = signal<boolean>(false);
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params): void => {
-      const id: string = params.id;
+      const id: string = params['id'];
       const ind: number = PORTFOLIO.findIndex(
         (x: ProjectInfoInterface): boolean => x.id === id
       );
       if (ind === -1) {
         this.router.navigate(['/portfolio']);
       } else {
-        this.selectedProject = new Project().fromInterface(PORTFOLIO[ind]);
+        this.selectedProject.set(new Project().fromInterface(PORTFOLIO[ind]));
       }
     });
   }
 
   previousPhoto(): void {
-    if (this.selectedPhoto === 1) {
+    if (this.selectedPhoto() === 1) {
       return;
     }
-    this.selectedPhoto--;
+    this.selectedPhoto.update((value: number): number => {
+      return value - 1;
+    });
   }
 
   nextPhoto(): void {
-    if (this.selectedPhoto === this.selectedProject.photos) {
+    if (this.selectedPhoto() === this.selectedProject().photos) {
       return;
     }
-    this.selectedPhoto++;
+    this.selectedPhoto.update((value: number): number => {
+      return value + 1;
+    });
   }
 
   showPhoto(): void {
-    this.openPhoto = !this.openPhoto;
+    this.openPhoto.update((value: boolean): boolean => !value);
   }
 }

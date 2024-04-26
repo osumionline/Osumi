@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from 'src/app/modules/pages/home/home.component';
+import HomeComponent from '@pages/home/home.component';
 
 export const routes: Routes = [
   {
@@ -8,25 +8,21 @@ export const routes: Routes = [
   },
   {
     path: 'projects',
-    loadComponent: () =>
-      import('src/app/modules/pages/projects/projects.component'),
+    loadComponent: () => import('@pages/projects/projects.component'),
   },
   {
     path: 'project/:id',
     loadComponent: () =>
-      import('src/app/modules/pages/project-detail/project-detail.component'),
+      import('@pages/project-detail/project-detail.component'),
   },
   {
     path: 'portfolio',
-    loadComponent: () =>
-      import('src/app/modules/pages/portfolio/portfolio.component'),
+    loadComponent: () => import('@pages/portfolio/portfolio.component'),
   },
   {
     path: 'portfolio/:id',
     loadComponent: () =>
-      import(
-        'src/app/modules/pages/portfolio-detail/portfolio-detail.component'
-      ),
+      import('@pages/portfolio-detail/portfolio-detail.component'),
   },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
