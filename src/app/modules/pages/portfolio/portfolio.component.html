@@ -4,7 +4,7 @@
 @for (p of portfolio; track p.id) {
 <a [routerLink]="['/portfolio', p.id]"
    class="portfolio">
-	<img [src]="'/assets/portfolio/' + p.id + '/' + p.id + '_1.webp'"
+	<img [src]="'portfolio/' + p.id + '/' + p.id + '_1.webp'"
 		 [alt]="p.title">
 	<div class="content">
 		<h2>{{p.title}}</h2>

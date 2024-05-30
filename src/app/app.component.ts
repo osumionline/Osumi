@@ -10,4 +10,4 @@ import HeaderComponent from '@shared/components/header/header.component';
   styleUrls: ['./app.component.scss'],
   imports: [HeaderComponent, FooterComponent, RouterOutlet],
 })
-export class AppComponent {}
+export default class AppComponent {}

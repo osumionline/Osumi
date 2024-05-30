@@ -4,7 +4,7 @@
 @for (p of projects; track p.id) {
 <a [routerLink]="['/project', p.id]"
    class="project">
-	<img [src]="'/assets/projects/' + p.id + '/' + p.id + '_1.webp'"
+	<img [src]="'projects/' + p.id + '/' + p.id + '_1.webp'"
 		 [alt]="p.title">
 	<div class="content">
 		<h2>{{p.title}}</h2>

@@ -2,7 +2,7 @@
 <div class="project">
 	<div class="photos">
 		@for (p of selectedProject().numPhotos; track p) {
-		<img [src]="'/assets/projects/' + selectedProject().id + '/' + selectedProject().id + '_' + p + '.webp'"
+		<img [src]="'projects/' + selectedProject().id + '/' + selectedProject().id + '_' + p + '.webp'"
 			 [alt]="selectedProject().title"
 			 [ngClass]="{'left': (selectedPhoto() > p), 'center': (selectedPhoto() === p), 'right': (selectedPhoto() < p)}"
 			 (click)="showPhoto()">
@@ -23,7 +23,7 @@
 
 @if (openPhoto()) {
 <div class="photo-detail">
-	<img [src]="'/assets/projects/' + selectedProject().id + '/' + selectedProject().id + '_' + selectedPhoto() + '.webp'"
+	<img [src]="'projects/' + selectedProject().id + '/' + selectedProject().id + '_' + selectedPhoto() + '.webp'"
 		 (click)="showPhoto()"
 		 [alt]="selectedProject().title">
 </div>
