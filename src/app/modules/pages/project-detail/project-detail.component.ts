@@ -12,7 +12,6 @@ import { ProjectInfoInterface } from '@interfaces/interfaces';
 import Project from '@model/project.model';
 
 @Component({
-  standalone: true,
   selector: 'app-project-detail',
   templateUrl: './project-detail.component.html',
   styleUrls: ['./project-detail.component.scss'],

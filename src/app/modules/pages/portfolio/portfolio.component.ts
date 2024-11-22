@@ -4,7 +4,6 @@ import { PORTFOLIO } from '@app/projects';
 import { ProjectInfoInterface } from '@interfaces/interfaces';
 
 @Component({
-  standalone: true,
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],

@@ -12,7 +12,6 @@ import Project from '@model/project.model';
 import { PORTFOLIO } from 'src/app/projects';
 
 @Component({
-  standalone: true,
   selector: 'app-portfolio-detail',
   templateUrl: './portfolio-detail.component.html',
   styleUrls: ['./portfolio-detail.component.scss'],

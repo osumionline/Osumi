@@ -4,7 +4,6 @@ import { PROJECTS } from '@app/projects';
 import { ProjectInfoInterface } from '@interfaces/interfaces';
 
 @Component({
-  standalone: true,
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
