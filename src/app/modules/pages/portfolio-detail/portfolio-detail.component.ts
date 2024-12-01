@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import {
   Component,
   OnInit,
@@ -15,7 +14,7 @@ import { PORTFOLIO } from 'src/app/projects';
   selector: 'app-portfolio-detail',
   templateUrl: './portfolio-detail.component.html',
   styleUrls: ['./portfolio-detail.component.scss'],
-  imports: [NgClass],
+  imports: [],
 })
 export default class PortfolioDetailComponent implements OnInit {
   private activatedRoute: ActivatedRoute = inject(ActivatedRoute);

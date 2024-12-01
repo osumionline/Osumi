@@ -4,7 +4,7 @@
 		@for (p of selectedProject().numPhotos; track p) {
 		<img [src]="'portfolio/' + selectedProject().id + '/' + selectedProject().id + '_' + p + '.webp'"
 			 [alt]="selectedProject().title"
-			 [ngClass]="{'left': (selectedPhoto() > p), 'center': (selectedPhoto() === p), 'right': (selectedPhoto() < p)}"
+			 [class]="{'left': (selectedPhoto() > p), 'center': (selectedPhoto() === p), 'right': (selectedPhoto() < p)}"
 			 (click)="showPhoto()">
 		}
 		<div class="controls">

@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import {
   Component,
   OnInit,
@@ -15,7 +14,7 @@ import Project from '@model/project.model';
   selector: 'app-project-detail',
   templateUrl: './project-detail.component.html',
   styleUrls: ['./project-detail.component.scss'],
-  imports: [NgClass],
+  imports: [],
 })
 export default class ProjectDetailComponent implements OnInit {
   private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
