@@ -6,7 +6,7 @@ export const PROJECTS: ProjectInfoInterface[] = [
     title: 'Osumi Framework',
     short: 'Framework para desarrollo de aplicaciones PHP.',
     description:
-      '<p>Osumi Framework es un pequeño framework orientado al modelo MVC (Modelo, Vista, Controlador) para la creación de aplicaciones web, tanto pequeñas como grandes.</p><p>La documentación del framework, con casos de uso y ejemplos, se encuentra en <a href="https://framework.osumi.es" target="_blank">Osumi Framework Docs</a>.</p><p>El repositorio con todo el código está disponible en <a href="https://github.com/osumionline/Osumi-Framework" target="_blank">Github</a> bajo licencia MIT.</p>',
+      '<p>Osumi Framework es un pequeño framework orientado al modelo MVC (Modelo, Vista, Controlador) para la creación de aplicaciones web, tanto pequeñas como grandes.</p><p>La documentación del framework, con casos de uso y ejemplos, se encuentra en <a href="https://framework.osumi.dev" target="_blank">Osumi Framework Docs</a>.</p><p>El repositorio con todo el código está disponible en <a href="https://github.com/osumionline/framework" target="_blank">Github</a> bajo licencia MIT.</p>',
     photos: 5,
   },
   {
