@@ -1,5 +1,7 @@
 img {
 	width: 100%;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
 }
 
 .menu {
@@ -24,5 +26,15 @@ img {
 				background: linear-gradient(0deg, var(--header-menu-color-up) 0%, var(--header-menu-color-down) 100%);
 			}
 		}
+	}
+
+	li:first-child a {
+		border-top-left-radius: 6px;
+		border-bottom-left-radius: 6px;
+	}
+
+	li:last-child a {
+		border-top-right-radius: 6px;
+		border-bottom-right-radius: 6px;
 	}
 }
