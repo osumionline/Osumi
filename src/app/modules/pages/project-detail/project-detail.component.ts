@@ -1,11 +1,13 @@
 import {
   Component,
+  InputSignal,
   OnInit,
   WritableSignal,
   inject,
+  input,
   signal,
 } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { PROJECTS } from '@app/projects';
 import { ProjectInfoInterface } from '@interfaces/interfaces';
 import Project from '@model/project.model';
@@ -17,25 +19,23 @@ import Project from '@model/project.model';
   imports: [],
 })
 export default class ProjectDetailComponent implements OnInit {
-  private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   private router: Router = inject(Router);
 
+  id: InputSignal<string> = input.required();
   selectedProject: WritableSignal<Project> = signal<Project>(new Project());
   selectedPhoto: WritableSignal<number> = signal<number>(1);
   openPhoto: WritableSignal<boolean> = signal<boolean>(false);
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params: Params): void => {
-      const id: string = params['id'];
-      const ind: number = PROJECTS.findIndex(
-        (x: ProjectInfoInterface): boolean => x.id === id
-      );
-      if (ind === -1) {
-        this.router.navigate(['/projects']);
-      } else {
-        this.selectedProject.set(new Project().fromInterface(PROJECTS[ind]));
-      }
-    });
+    const id: string = this.id();
+    const ind: number = PROJECTS.findIndex(
+      (x: ProjectInfoInterface): boolean => x.id === id
+    );
+    if (ind === -1) {
+      this.router.navigate(['/projects']);
+    } else {
+      this.selectedProject.set(new Project().fromInterface(PROJECTS[ind]));
+    }
   }
 
   previousPhoto(): void {

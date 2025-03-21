@@ -3,6 +3,7 @@ import {
   InMemoryScrollingFeature,
   InMemoryScrollingOptions,
   provideRouter,
+  withComponentInputBinding,
   withInMemoryScrolling,
   withViewTransitions,
 } from '@angular/router';
@@ -18,6 +19,11 @@ const inMemoryScrollingFeature: InMemoryScrollingFeature =
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, inMemoryScrollingFeature, withViewTransitions()),
+    provideRouter(
+      routes,
+      inMemoryScrollingFeature,
+      withViewTransitions(),
+      withComponentInputBinding()
+    ),
   ],
 };
