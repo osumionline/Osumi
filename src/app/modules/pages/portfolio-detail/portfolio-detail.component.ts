@@ -8,9 +8,9 @@ import {
   signal,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { PORTFOLIO } from '@app/projects';
 import { ProjectInfoInterface } from '@interfaces/interfaces';
 import Project from '@model/project.model';
-import { PORTFOLIO } from 'src/app/projects';
 
 @Component({
   selector: 'app-portfolio-detail',
@@ -28,7 +28,7 @@ export default class PortfolioDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const ind: number = PORTFOLIO.findIndex(
-      (x: ProjectInfoInterface): boolean => x.id === this.id()
+      (x: ProjectInfoInterface): boolean => x.id === this.id(),
     );
     if (ind === -1) {
       this.router.navigate(['/portfolio']);

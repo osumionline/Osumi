@@ -28,9 +28,7 @@ export default class ProjectDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const id: string = this.id();
-    const ind: number = PROJECTS.findIndex(
-      (x: ProjectInfoInterface): boolean => x.id === id
-    );
+    const ind: number = PROJECTS.findIndex((x: ProjectInfoInterface): boolean => x.id === id);
     if (ind === -1) {
       this.router.navigate(['/projects']);
     } else {

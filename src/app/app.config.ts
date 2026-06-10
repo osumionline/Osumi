@@ -1,7 +1,6 @@
 import {
   ApplicationConfig,
-  provideBrowserGlobalErrorListeners,
-  provideZonelessChangeDetection,
+  provideBrowserGlobalErrorListeners
 } from '@angular/core';
 import {
   InMemoryScrollingOptions,
@@ -20,7 +19,6 @@ const scrollConfig: InMemoryScrollingOptions = {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection(),
     provideRouter(
       routes,
       withInMemoryScrolling(scrollConfig),
